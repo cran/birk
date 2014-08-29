@@ -1,8 +1,8 @@
-0e19565b231fcd1376e12bb59a93e600 *DESCRIPTION
+2068b8c196e41df4f0ab5b6065615418 *DESCRIPTION
 8b54e5a89fbda3af5e077053d40bec76 *NAMESPACE
-caf6df09f162a79c30e030d5e95b8486 *R/conv_unit.R
+e5a303244f46e6d458ea550ab2a3a396 *R/conv_unit.R
 e1be48e649ec90a21ab3762f9ad49d88 *R/se.R
-f9be04200313474c24bce672bb043d73 *man/birk-package.Rd
-5cd83527090fa7d5348a3d050e1d34a2 *man/conv_unit.Rd
-83af6a528ae2f49598d6b71f9171c048 *man/conv_unit_options.Rd
-da8606d7fa4c8392fde1d94e2188219f *man/se.Rd
+97b190ab0e30e58b762e79bb6ad90f7b *man/birk-package.Rd
+a8427bb20b87ef3a690ea3498eca33cc *man/conv_unit.Rd
+ecdf05e062f3e8f0d46cc391bb2b951c *man/conv_unit_options.Rd
+f8d1ec31c4272d9d8cda214ba85360a9 *man/se.Rd

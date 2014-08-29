@@ -7,7 +7,7 @@
   \item{x}{a numeric vector or an R object which is coercible to one by as.vector(x, "numeric").}
   \item{na.rm}{logical. Should missing values be removed?}
 }
-\author{Matthew A. Birk}
+\author{Matthew A. Birk \email{matthewabirk@gmail.com>}}
 \seealso{
 \code{\link{sd}},\code{\link{var}}
 }
