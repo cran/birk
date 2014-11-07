@@ -9,7 +9,7 @@
 }
 \author{Matthew A. Birk \email{matthewabirk@gmail.com>}}
 \seealso{
-\code{\link{sd}},\code{\link{var}}
+\code{\link{sd}}, \code{\link{var}}
 }
 \examples{
 se(1:10)

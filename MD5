@@ -1,8 +1,10 @@
-2068b8c196e41df4f0ab5b6065615418 *DESCRIPTION
+8e60cdc4dbc1704585cfc59c6df140d8 *DESCRIPTION
 8b54e5a89fbda3af5e077053d40bec76 *NAMESPACE
-e5a303244f46e6d458ea550ab2a3a396 *R/conv_unit.R
+192e5ac4ca18331a2429e7ad550c4948 *R/conv_unit.R
+1d87ae1628c325bf8536a8d25231b9a7 *R/geom_mean.R
 e1be48e649ec90a21ab3762f9ad49d88 *R/se.R
-97b190ab0e30e58b762e79bb6ad90f7b *man/birk-package.Rd
-a8427bb20b87ef3a690ea3498eca33cc *man/conv_unit.Rd
-ecdf05e062f3e8f0d46cc391bb2b951c *man/conv_unit_options.Rd
-f8d1ec31c4272d9d8cda214ba85360a9 *man/se.Rd
+aa9d0d29dfd3d349c97da7026e2b43e7 *man/birk-package.Rd
+376ea33596e95b67248efd18dc6f0670 *man/conv_unit.Rd
+debeb97c43dc754d62a95544a4fbeb3d *man/conv_unit_options.Rd
+3060f9edc284f33c401d6048d505494b *man/geom_mean.Rd
+fe4aec6a7af1f7ca730e64f6c65c91e0 *man/se.Rd

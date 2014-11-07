@@ -6,13 +6,16 @@
 conv_unit(x, from, to)
 }
 \arguments{
-  \item{x}{the measurement value in its orignial units}
+  \item{x}{the measurement value or vector of values in its originial units}
   \item{from}{the unit in which the measurement was made}
-  \item{to}{the unit to which the measurement is to be converted
-  
-Acceleration: mm_per_sec2, cm_per_sec2, m_per_sec2, km_per_sec2, grav, in_per_sec2, ft_per_sec2, mi_per_sec2
 
-Area: nm2, um2, mm2, cm2, m2, hectacre, km2, in2, ft2, yd2, acre, mi2, naut_mi2
+Acceleration: mm_per_sec2, cm_per_sec2, m_per_sec2, km_per_sec2, grav, inch_per_sec2, ft_per_sec2, mi_per_sec2
+
+Angle: degree, radian, grad, arcmin, arcsec, turn
+
+Area: nm2, um2, mm2, cm2, m2, hectare, km2, inch2, ft2, yd2, acre, mi2, naut_mi2
+
+Coordinate: dec_deg, deg_dec_min, deg_min_sec (see note)
 
 Duration: nsec, usec, msec, sec, min, hr, day, wk, mon, yr, dec, cen, mil
 
@@ -30,13 +33,16 @@ Pressure: uatm, atm, Pa, hPa, kPa, torr, mmHg, inHg, mbar, bar, dbar, psi
 
 Speed: mm_per_sec, cm_per_sec, m_per_sec, km_per_sec, inch_per_sec, ft_per_sec, kph, mph, knot
 
-Temperature: C, F, K
+Temperature: C, F, K, R
 
-Volume: ml, l, cm3, m3, us_tsp, us_tbsp, us_oz, us_cup, us_pint, us_quart, us_gal, inch3, ft3, imp_tsp, imp_tbsp, imp_oz, imp_pint, imp_quart, imp_gal
+Volume: ml, dl, l, cm3, dm3, m3, us_tsp, us_tbsp, us_oz, us_cup, us_pint, us_quart, us_gal, inch3, ft3, imp_tsp, imp_tbsp, imp_oz, imp_pint, imp_quart, imp_gal
+  \item{to}{the unit to which the measurement is to be converted
 }}
 \details{The conversion values have been defined based primarily from international weight and measurement authorities (e.g. General Conference on Weights and Measures, International Committee for Weights and Measures, etc.). While much effort was made to make conversions as accurate as possible, you should check the accuracy of conversions to ensure that conversions are precise enough for your applications.}
 \author{Matthew A. Birk \email{matthewabirk@gmail.com>}}
-\note{Duration: Years are defined as 365.25 days and months are defined as 1/12 a year
+\note{Duration: Years are defined as 365.25 days and months are defined as 1/12 a year. 
+
+Coordinate: values must be entered as a string with one space between subunits (e.g. 70° 33’ 11” = "70 33 11")
 
 Energy: cal is a thermochemical calorie (4.184 J) and Cal is 1000 cal (kcal or 4184 J)
 
@@ -49,4 +55,7 @@ Power: hp is mechanical horsepower, or 745.69 W}
 \examples{
 conv_unit(2.54, cm, inch) # Result = 1 inch
 conv_unit(seq(1, 10), kg, short_ton) # A vector of measurement values can be converted
+conv_unit("33 1 1", deg_min_sec, dec_deg)
+conv_unit(c("101 44.32","3 19.453"), deg_dec_min, deg_min_sec)
 }
+\encoding{UTF-8}

@@ -4,7 +4,9 @@
 \title{Unit of Measurement Conversion Options}
 \description{This dataset shows what units of measurement can be converted with the function conv_unit.}
 \usage{conv_unit_options}
-\details{Duration: Years are defined as 365.25 days and months are defined as 1/12 a year
+\details{Duration: Years are defined as 365.25 days and months are defined as 1/12 a year. 
+
+Coordinate: values must be entered as a string with one space between subunits (e.g. 70° 33’ 11” = "70 33 11")
 
 Energy: cal is a thermochemical calorie (4.184 J) and Cal is 1000 cal (kcal or 4184 J)
 
@@ -20,3 +22,4 @@ conv_unit_options
 conv_unit_options['Pressure']
 }
 \keyword{datasets}
+\encoding{UTF-8}
