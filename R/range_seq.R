@@ -20,8 +20,9 @@
 #'
 #' @encoding UTF-8
 #' @export
+#' @import grDevices
 
-range_seq=function(x,extend=0,...){
-  r=extendrange(x,f=extend)
-  seq(r[1],r[2],...)
+range_seq=function(x, extend=0, ...){
+  r=grDevices::extendrange(x, f = extend)
+  seq(r[1], r[2], ...)
 }

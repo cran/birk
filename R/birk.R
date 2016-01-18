@@ -1,6 +1,6 @@
-#' MA Birk’s Functions
+#' MA Birk's Functions
 #'
-#' This is a compilation of functions that I found useful to make. It currently includes a unit of measurement conversion function, a Q10 calculator for temperature dependence of chemical and biological rates, and some miscellaneous wrapper functions to make R code shorter and faster to write.
+#' This is a compilation of functions that I found useful to make. It currently includes a couple of functions to work with converting units of measurement, and some miscellaneous wrapper functions to make R code shorter and faster to write.
 #'
 #' @author Matthew A. Birk, \email{matthewabirk@@gmail.com}
 #' @docType package
@@ -32,7 +32,7 @@ NULL
 #'
 #' @examples
 #' conv_unit_options
-#' conv_unit_options['Pressure']
+#' conv_unit_options$pressure
 #'
 #' @docType data
 #' @keywords datasets

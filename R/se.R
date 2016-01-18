@@ -17,8 +17,9 @@
 #'
 #' @encoding UTF-8
 #' @export
+#' @import stats
 
 se=function(x,na.rm=FALSE)
 {
-  return(sqrt(var(if (is.vector(x)) x else as.double(x),na.rm=na.rm)/length(x)))
+  return(sqrt(stats::var(if (is.vector(x)) x else as.double(x), na.rm = na.rm) / length(x)))
 }
