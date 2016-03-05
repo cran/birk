@@ -1,6 +1,6 @@
 # Created by Matthew A. Birk
 # Converts common units for a variety of dimensions
-# Last updated: Jan 2016
+# Last updated: Feb 2016
 
 .conversions=data.frame(dim = character(0), unit = character(0), std = numeric(0))
 .conversions = rbind(.conversions,
@@ -41,6 +41,11 @@
 	data.frame(dim = 'coordinate', unit = 'deg_dec_min', std = NA),
 	data.frame(dim = 'coordinate', unit = 'deg_min_sec', std = NA),
 
+	data.frame(dim = 'count', unit = 'nmol', std = 1e9),
+	data.frame(dim = 'count', unit = 'umol', std = 1e6),
+	data.frame(dim = 'count', unit = 'mmol', std = 1e3),
+	data.frame(dim = 'count', unit = 'mol', std = 1),
+
 	data.frame(dim = 'duration', unit = 'nsec', std = 1e9),
 	data.frame(dim = 'duration', unit = 'usec', std = 1e6),
 	data.frame(dim = 'duration', unit = 'msec', std = 1e3),
@@ -54,6 +59,7 @@
 	data.frame(dim = 'duration', unit = 'dec', std = 1/(86400*3652.5)),
 	data.frame(dim = 'duration', unit = 'cen', std = 1/(86400*36525)),
 	data.frame(dim = 'duration', unit = 'mil', std = 1/(86400*365250)),
+	data.frame(dim = 'duration', unit = 'Ma', std = 1/(86400*365250000)),
 
 	data.frame(dim = 'energy', unit = 'J', std = 1),
 	data.frame(dim = 'energy', unit = 'kJ', std = 1e-3),
@@ -99,13 +105,15 @@
 	data.frame(dim = 'length', unit = 'au', std = 1/149597870700),
 	data.frame(dim = 'length', unit = 'light_yr', std = 1/9460730472580800),
 	data.frame(dim = 'length', unit = 'parsec', std = 1/149597870700/(6.48e5/pi)),
+	data.frame(dim = 'length', unit = 'point', std = 100/2.54*72),
 	
 	data.frame(dim = 'mass', unit = 'ug', std = 1e6),
 	data.frame(dim = 'mass', unit = 'mg', std = 1e3),
 	data.frame(dim = 'mass', unit = 'g', std = 1),
 	data.frame(dim = 'mass', unit = 'kg', std = 1e-3),
-	data.frame(dim = 'mass', unit = 'metric_ton', std = 1e-6),
 	data.frame(dim = 'mass', unit = 'Pg', std = 1e-15),
+	data.frame(dim = 'mass', unit = 'carat', std = 5),
+	data.frame(dim = 'mass', unit = 'metric_ton', std = 1e-6),
 	data.frame(dim = 'mass', unit = 'oz', std = 1/28.349523125),
 	data.frame(dim = 'mass', unit = 'lbs', std = 2.20462234e-3),
 	data.frame(dim = 'mass', unit = 'short_ton', std = 1/907184.74),
@@ -198,11 +206,12 @@ conv_unit_options = lapply(split(.conversions$unit, .conversions$dim, drop = T),
 #'	 \item{Angle}{degree, radian, grad, arcmin, arcsec, turn}
 #'	 \item{Area}{nm2, um2, mm2, cm2, m2, hectare, km2, inch2, ft2, yd2, acre, mi2, naut_mi2}
 #'	 \item{Coordinate}{dec_deg, deg_dec_min, deg_min_sec (see note)}
-#'	 \item{Duration}{nsec, usec, msec, sec, min, hr, day, wk, mon, yr, dec, cen, mil}
+#'	 \item{Count}{nmol, umol, mmol, mol}
+#'	 \item{Duration}{nsec, usec, msec, sec, min, hr, day, wk, mon, yr, dec, cen, mil, Ma}
 #'	 \item{Energy}{J, kJ, erg, cal, Cal, Wsec, kWh, MWh, BTU}
 #'	 \item{Flow}{ml_per_sec, ml_per_min, ml_per_hr, l_per_sec, l_per_min, l_per_hr, m3_per_sec, m3_per_min, m3_per_hr, gal_per_sec, gal_per_min, gal_per_hr, ft3_per_sec, ft3_per_min, ft3_per_hr, Sv}
-#'	 \item{Length}{angstrom, nm, um, mm, cm, dm, m, km, inch, ft, yd, fathom, mi, naut_mi, au, light_yr, parsec}
-#'	 \item{Mass}{ug, mg, g, kg, metric_ton, Pg, oz, lbs, short_ton, long_ton, stone}
+#'	 \item{Length}{angstrom, nm, um, mm, cm, dm, m, km, inch, ft, yd, fathom, mi, naut_mi, au, light_yr, parsec, point}
+#'	 \item{Mass}{ug, mg, g, kg, Pg, carat, metric_ton, oz, lbs, short_ton, long_ton, stone}
 #'	 \item{Power}{uW, mW, W, kW, MW, GW, erg_per_sec, cal_per_sec, cal_per_hr, Cal_per_sec, Cal_per_hr, BTU_per_sec, BTU_per_hr, hp}
 #'	 \item{Pressure}{uatm, atm, Pa, hPa, kPa, torr, mmHg, inHg, mbar, bar, dbar, psi}
 #'	 \item{Speed}{mm_per_sec, cm_per_sec, m_per_sec, km_per_sec, inch_per_sec, ft_per_sec, kph, mph, km_per_day, mi_per_day, knot, mach, light}
