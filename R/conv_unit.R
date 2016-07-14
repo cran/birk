@@ -1,8 +1,8 @@
 # Created by Matthew A. Birk
 # Converts common units for a variety of dimensions
-# Last updated: Feb 2016
+# Last updated: Jul 2016
 
-.conversions=data.frame(dim = character(0), unit = character(0), std = numeric(0))
+.conversions = data.frame(dim = character(0), unit = character(0), std = numeric(0))
 .conversions = rbind(.conversions,
 	
 	data.frame(dim = 'acceleration', unit = 'mm_per_sec2', std = 100),
@@ -194,7 +194,7 @@
 	data.frame(dim = 'volume', unit = 'imp_gal', std = 1/4.54609)
 )
 
-conv_unit_options = lapply(split(.conversions$unit, .conversions$dim, drop = T), as.character)
+conv_unit_options = lapply(split(.conversions$unit, .conversions$dim, drop = TRUE), as.character)
 
 
 #' Convert Units of Measurement
@@ -251,9 +251,9 @@ conv_unit_options = lapply(split(.conversions$unit, .conversions$dim, drop = T),
 #' @encoding UTF-8
 #' @export
 
-conv_unit=function(x,from,to)
+conv_unit = function(x, from, to)
 {
-	unit=std=NULL
+	unit = std = NULL
 	if(nrow(subset(.conversions,unit==from,dim))==0) stop('the \'from\' argument is not an acceptable unit.')
 	if(nrow(subset(.conversions,unit==to,dim))==0) stop('the \'to\' argument is not an acceptable unit.')
 	if(subset(.conversions,unit==from,dim)!=subset(.conversions,unit==to,dim)) stop('these units cannot be converted because they are of different dimensions. Try using conv_dim().')
@@ -274,15 +274,20 @@ conv_unit=function(x,from,to)
 		prop=(x-get(paste('frz',from,sep='')))/get(paste('range',from,sep=''))
 		return(prop*get(paste('range',to,sep=''))+get(paste('frz',to,sep='')))
 	}
-	if((from=='dec_deg' | from=='deg_dec_min' | from=='deg_min_sec') & (to=='dec_deg' | to=='deg_dec_min' | to=='deg_min_sec'))
+	if(from %in% c('dec_deg', 'deg_dec_min', 'deg_min_sec') & to %in% c('dec_deg', 'deg_dec_min', 'deg_min_sec'))
 	{
-		if(from=='dec_deg') secs=as.numeric(x)*3600
-		if(from=='deg_dec_min') secs=lapply(split(as.numeric(unlist(strsplit(x,' ')))*c(3600,60),f=rep(1:length(x),each=2)),sum)
-		if(from=='deg_min_sec') secs=lapply(split(as.numeric(unlist(strsplit(x,' ')))*c(3600,60,1),f=rep(1:length(x),each=3)),sum)
-		if(to=='dec_deg') return(as.character(lapply(secs,function(y) y/3600)))
-		if(to=='deg_dec_min') return(paste(lapply(secs,function(y) y%/%3600),lapply(secs,function(y) y%%3600/60)))
-		if(to=='deg_min_sec') return(paste(lapply(secs,function(y) y%/%3600),lapply(secs,function(y) y%%3600%/%60),lapply(secs,function(y) y%%3600%%60)))
+		neg = grepl('-', x)
+		x = gsub('-', '', x)
+		if(from == 'dec_deg') secs = as.numeric(x) * 3600
+		if(from == 'deg_dec_min') secs = lapply(split(as.numeric(unlist(strsplit(x, ' '))) * c(3600, 60), f = rep(1:length(x), each = 2)), sum)
+		if(from == 'deg_min_sec') secs = lapply(split(as.numeric(unlist(strsplit(x ,' '))) * c(3600, 60, 1), f = rep(1:length(x), each = 3)), sum)
+		if(to == 'dec_deg') inter = as.character(lapply(secs, function(y) y / 3600))
+		if(to == 'deg_dec_min') inter = paste(lapply(secs, function(y) y %/% 3600), lapply(secs, function(y) y %% 3600 / 60))
+		if(to == 'deg_min_sec') inter = paste(lapply(secs, function(y) y %/% 3600), lapply(secs, function(y) y %% 3600 %/% 60), lapply(secs, function(y) y %% 3600 %% 60))
+		inter = paste0(ifelse(neg, '-', ''), inter)
+		inter[grepl('NA', inter)] = NA
+		return(inter)
 	}
-	value=x/subset(.conversions,unit==from,std,drop=T)
-	return(value*subset(.conversions,unit==to,std,drop=T))
+	value = x / subset(.conversions, unit == from, std, drop = TRUE)
+	return(value * subset(.conversions, unit == to, std, drop = TRUE))
 }

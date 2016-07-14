@@ -7,7 +7,7 @@
 \alias{birk-package}
 \title{MA Birk's Functions}
 \description{
-Collection of tools to make R more convenient. Includes tools to convert between units and dimensions of measurement and to summarize data using statistics not available with base R.
+This is a compilation of functions that I found useful to make. It currently includes a couple of functions to work with converting units of measurement, and some miscellaneous wrapper functions to make R code shorter and faster to write.
 }
 \author{
 Matthew A. Birk, \email{matthewabirk@gmail.com}
