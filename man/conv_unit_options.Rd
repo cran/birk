@@ -13,7 +13,7 @@ The conversion values have been defined based primarily from international weigh
 conv_unit_options
 }
 \description{
-Shows what units of measurement can be converted with the function \code{\link{conv_unit}}.
+DEPRECATED. Shows what units of measurement can be converted with the function \code{\link{conv_unit}}.
 }
 \details{
 \describe{

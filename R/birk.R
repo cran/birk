@@ -1,6 +1,6 @@
 #' MA Birk's Functions
 #'
-#' This is a compilation of functions that I found useful to make. It currently includes a couple of functions to work with converting units of measurement, and some miscellaneous wrapper functions to make R code shorter and faster to write.
+#' Collection of tools to make R more convenient. Includes tools to summarize data using statistics not available with base R and manipulate objects for analyses.
 #'
 #' @author Matthew A. Birk, \email{matthewabirk@@gmail.com}
 #' @docType package
@@ -14,7 +14,7 @@ NULL
 
 #' Unit of Measurement Conversion Options
 #'
-#' Shows what units of measurement can be converted with the function \code{\link{conv_unit}}.
+#' DEPRECATED. Shows what units of measurement can be converted with the function \code{\link{conv_unit}}.
 #'
 #' \describe{
 #'   \item{Duration}{Years are defined as 365.25 days and months are defined as 1/12 a year.}

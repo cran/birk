@@ -15,7 +15,7 @@ conv_unit(x, from, to)
 \item{to}{the unit to which the measurement is to be converted.}
 }
 \description{
-Converts common units of measurement for a variety of dimensions. See \code{\link{conv_unit_options}} for all options.
+DEPRECATED. Converts common units of measurement for a variety of dimensions. See \code{\link{conv_unit_options}} for all options.
 }
 \details{
 \describe{

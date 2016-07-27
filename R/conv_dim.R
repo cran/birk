@@ -4,7 +4,7 @@
 
 #' Convert Dimensions of Measurement
 #'
-#' Converts between dimensions of measurement given a transition dimension (the dimension that "bridges" \code{x} and \code{y}, e.g. liters per second, lbs per acre). Note that 2 of the 3 measurements (\code{x}, \code{y}, or \code{trans}) must be defined to calculate the 3rd. See \code{\link{conv_unit_options}} for all options.
+#' DEPRECATED. Converts between dimensions of measurement given a transition dimension (the dimension that "bridges" \code{x} and \code{y}, e.g. liters per second, lbs per acre). Note that 2 of the 3 measurements (\code{x}, \code{y}, or \code{trans}) must be defined to calculate the 3rd. See \code{\link{conv_unit_options}} for all options.
 #'
 #' This function supports all dimensions in \code{conv_unit_options} except for coordinates. The conversion values have been defined based primarily from international weight and measurement authorities (e.g. General Conference on Weights and Measures, International Committee for Weights and Measures, etc.). While much effort was made to make conversions as accurate as possible, you should check the accuracy of conversions to ensure that conversions are precise enough for your applications.
 #'
@@ -41,7 +41,7 @@
 #' @export
 
 conv_dim = function(x, x_unit, trans, trans_unit, y, y_unit){
-	
+	.Deprecated(msg = 'conv_dim() has been transfered to the package \"measurements\" available on CRAN. It is now deprecated on the \"birk\" package and will be removed in a future version.')
 	if(trans_unit == 'grav'){
 		orig_trans_unit = trans_unit
 		trans_unit = 'm_per_sec2'

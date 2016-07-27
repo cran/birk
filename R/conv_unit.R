@@ -199,7 +199,7 @@ conv_unit_options = lapply(split(.conversions$unit, .conversions$dim, drop = TRU
 
 #' Convert Units of Measurement
 #'
-#' Converts common units of measurement for a variety of dimensions. See \code{\link{conv_unit_options}} for all options.
+#' DEPRECATED. Converts common units of measurement for a variety of dimensions. See \code{\link{conv_unit_options}} for all options.
 #'
 #' \describe{
 #'	 \item{Acceleration}{mm_per_sec2, cm_per_sec2, m_per_sec2, km_per_sec2, grav, inch_per_sec2, ft_per_sec2, mi_per_sec2, kph_per_sec, mph_per_sec}
@@ -251,8 +251,8 @@ conv_unit_options = lapply(split(.conversions$unit, .conversions$dim, drop = TRU
 #' @encoding UTF-8
 #' @export
 
-conv_unit = function(x, from, to)
-{
+conv_unit = function(x, from, to){
+	.Deprecated(msg = 'conv_unit() has been transfered to the package \"measurements\" available on CRAN. It is now deprecated on the \"birk\" package and will be removed in a future version.')
 	unit = std = NULL
 	if(nrow(subset(.conversions,unit==from,dim))==0) stop('the \'from\' argument is not an acceptable unit.')
 	if(nrow(subset(.conversions,unit==to,dim))==0) stop('the \'to\' argument is not an acceptable unit.')

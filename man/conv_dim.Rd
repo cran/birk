@@ -21,7 +21,7 @@ conv_dim(x, x_unit, trans, trans_unit, y, y_unit)
 \item{y_unit}{the unit in which \code{y} was measured.}
 }
 \description{
-Converts between dimensions of measurement given a transition dimension (the dimension that "bridges" \code{x} and \code{y}, e.g. liters per second, lbs per acre). Note that 2 of the 3 measurements (\code{x}, \code{y}, or \code{trans}) must be defined to calculate the 3rd. See \code{\link{conv_unit_options}} for all options.
+DEPRECATED. Converts between dimensions of measurement given a transition dimension (the dimension that "bridges" \code{x} and \code{y}, e.g. liters per second, lbs per acre). Note that 2 of the 3 measurements (\code{x}, \code{y}, or \code{trans}) must be defined to calculate the 3rd. See \code{\link{conv_unit_options}} for all options.
 }
 \details{
 This function supports all dimensions in \code{conv_unit_options} except for coordinates. The conversion values have been defined based primarily from international weight and measurement authorities (e.g. General Conference on Weights and Measures, International Committee for Weights and Measures, etc.). While much effort was made to make conversions as accurate as possible, you should check the accuracy of conversions to ensure that conversions are precise enough for your applications.

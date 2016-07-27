@@ -1,4 +1,8 @@
 -------------------------------------------------
+version 2.1.2, 2016-07-27
+- conv_dim():	added notice that conv_dim() is now deprecated in this package and has been transfered to a more appropriate package: measurements
+- conv_unit():	added notice that conv_unit() is now deprecated in this package and has been transfered to a more appropriate package: measurements
+-------------------------------------------------
 version 2.1.1, 2016-07-13
 - conv_unit():	fixed a bug where negative coordinate values were not properly converted
 - conv_unit():	fixed a bug where NA values were returned as strings containing "NA"s rather than returning NA when converting coordinate units
